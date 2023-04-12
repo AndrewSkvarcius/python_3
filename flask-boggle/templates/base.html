@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>{% block title %} Title{% endblock %} </title>
+</head>
+<body>
+    <section id="boggle"></section>
+    <header>
+        <img src="https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/AsV3CPSmAizMGpG4VUH31/e010fd6d7c633ace9cdebbfb9c83bcd7/BOG-Logo.png">
+    </header>                   
+<div class="container">
+<main>
+    <table class="board">
+        <tbody>
+            {% for row in board %}
+              <tr>
+                 {% for cell in row %} 
+                 <td>{{ cell }}</td>
+                 {% endfor %}
+              </tr>
+             {% endfor %} 
+        </tbody> 
+    </table> 
+   
+   
+  {% block content %}CONTENT HERE{% endblock %}
+</main>
+</div>
+<footer>Copyright by Spring Boarder</footer>
+</section>
+<script src="http://unpkg.com/jquery"></script>
+<script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+<script src="/static/app.js"></script>
+<script>
+    let game = new BoggleGame("boggle", 60);
+</script>
+</body>
+</html>
