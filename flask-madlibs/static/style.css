@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+}
+.container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+}
+h1 {
+    color:blueviolet;
+
+}
+p {
+    color:rgb(197, 197, 197)
+}
+
+button:hover{
+    cursor: pointer;
+}
+
