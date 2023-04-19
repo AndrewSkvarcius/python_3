@@ -2,11 +2,14 @@
 <html>
   <head>
     <title>Boggle</title>
-    <link rel="stylesheet" href="/static/boggle.css">
+    <link rel="stylesheet" href="/static/styles.css">
   </head>
   <body>
     <section id="boggle">
-
+      <header>
+        <img src="https://staticctf.ubisoft.com/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/AsV3CPSmAizMGpG4VUH31/e010fd6d7c633ace9cdebbfb9c83bcd7/BOG-Logo.png">
+    </header>                   
+    <div class="container">
       <table class="board">
         <tbody>
           {% for row in board %}
@@ -31,7 +34,7 @@
 
       <form method="POST" class="add-word">
         <input name="word" class="word" autofocus>
-        <button>Enter</button>
+        <button type="submit">Enter</button>
       </form>
 
       <p class="msg">
@@ -41,11 +44,14 @@
       <ul class="words">
         <!-- our JS will words here as they score -->   
       </ul>
+    </div>
+
+    
 
     </section>
     <script src="http://unpkg.com/jquery"></script>
     <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
-    <script src="/static/boggle.js"></script>
+    <script src="/static/app.js"></script>
     <script>
       let game = new BoggleGame("boggle", 60);
     </script>

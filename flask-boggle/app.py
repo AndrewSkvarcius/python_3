@@ -20,10 +20,10 @@ def boggle_start():
     highscore = session.get("highscore", 0)
     numplays = session.get("numplays", 0)
     
-    return render_template("home.html", board=board,
+    return render_template("index.html", board=board,
     highscore= highscore, numplays=numplays)
 
-@app.route("/lookup", methods=["GET", "POST"])
+@app.route("/lookup")
 def word_lookup():
 
     word = request.args["word"]
@@ -32,7 +32,7 @@ def word_lookup():
 
     return jsonify({'result': response})
 
-@app.route("/game-score", methods=["GET", "POST"])
+@app.route("/game-score", methods=["POST"])
 def game_score():
 
     score = request.json["score"]
